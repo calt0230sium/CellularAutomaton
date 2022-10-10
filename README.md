@@ -36,7 +36,12 @@ The initial state is ``n/2 empty cells`` , ``1`` , ``n/2 empty cells``.
 ### 2D cellular automaton :
 
 The 2d cellular automaton can't works like the Elementary one. 
-Indeed, each cells pocess 8 neighbors instead of 2, so you need ``2^8`` bits to represent all the possible states. 
-So instead, I chose a more simple representation of rule which describe the state of each cells depending the number of their neighbors.
+Indeed, each cells pocess 8 neighbors instead of 2, so you need ``2^9`` bits to represent all the possible states for one cells. 
+So instead, I chose a more simple representation of the rule which describe the state of each cells depending the number of alive cells around.
+The rules are modelized by an array of length 8 representing the number of neighbors possible : each cell describe a life state (Dead, Alive or Born).
+The default rule set is the Game of life one :
+```
+Dead, Dead, Alive, Born, Dead, Dead, Dead, Dead, Dead
+```
 
 [^1]: On Windows you need to install make via chocolatery.
