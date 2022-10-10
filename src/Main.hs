@@ -63,7 +63,7 @@ planAutomaton = do
   let size1 = 5
   let size2 = 50
 
-  putStrLn "Chose initial state :"
+  putStrLn "Choose initial state :"
   putStrLn $ "1. Glider, grid" ++ (show size1) ++ "x" ++ (show size1)
   putStrLn $ "2. Random, grid" ++ (show size2) ++ "x" ++ (show size2)
 
@@ -79,8 +79,8 @@ planAutomaton = do
     otherwise -> putStrLn "Error, retry please."
 
 main = do
-  -- chose the automaton
-  putStrLn "Chose the dimension of the cellular automaton (1 or 2) :"
+  -- Choose the automaton
+  putStrLn "Choose the dimension of the cellular automaton (1 or 2) :"
 
   input <- getInt
 
