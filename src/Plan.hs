@@ -7,6 +7,7 @@ import System.IO
 import Debug.Trace
 import Control.Concurrent
 import System.Process
+import System.Info
 
 
 -- Grid cellular automaton --
@@ -50,9 +51,13 @@ stateToString automaton_size state = case state of
 
 -- IO functions, side effect --
 
+clearTerminal
+  | os == "mingw32" = callCommand "cls"
+  | otherwise = callCommand "clear"
+
 runAutomaton automaton_size state rule 0 = return()
 runAutomaton automaton_size state rule n = do
   putStrLn (stateToString automaton_size state)
   threadDelay 100000
-  callCommand "cls"
+  clearTerminal
   runAutomaton automaton_size (automaton automaton_size rule state state) rule (n-1)
